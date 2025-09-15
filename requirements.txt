@@ -1,0 +1,12 @@
+opencv-python
+facedetector-py
+filetype
+numpy
+pytest
+flask
+gunicorn
+pocketbase
+werkzeug
+python-dotenv
+dotenv
+
