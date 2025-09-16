@@ -24,8 +24,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy application code
 COPY . .
 
-RUN chmod +x /generate_env.sh \
-    && /generate_env.sh
+RUN chmod +x generate_env.sh \
+    && generate_env.sh
 
 EXPOSE 5000
 
