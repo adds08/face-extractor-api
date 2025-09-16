@@ -1,5 +1,4 @@
 import cv2
-import numpy as np
 from flask import Flask, request, jsonify
 from datetime import datetime
 import tempfile
@@ -9,7 +8,7 @@ from pocketbase import PocketBase
 from pocketbase.client import FileUpload
 import logging
 from dotenv import load_dotenv
-import json
+from facedetector import FaceDetector
 
 # Load environment variables
 load_dotenv(dotenv_path="./env/.env")
@@ -35,13 +34,6 @@ except Exception as e:
     logger.error(f"Failed to connect to PocketBase: {e}")
     pb = None
 
-# Import your FaceDetector
-try:
-    from facedetector import FaceDetector
-    logger.info("Successfully imported FaceDetector")
-except ImportError as e:
-    logger.error(f"Failed to import FaceDetector: {e}")
-    FaceDetector = None
 
 # Allowed video extensions
 ALLOWED_EXTENSIONS = {'mp4', 'avi', 'mov', 'mkv', 'flv', 'wmv', 'm4v', 'webm'}

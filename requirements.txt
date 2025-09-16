@@ -1,7 +1,6 @@
 opencv-python
 facedetector-py
 filetype
-numpy
 pytest
 flask
 gunicorn
